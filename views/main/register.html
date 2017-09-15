@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content%}
+<div class="container">
+  <div class="form-group">
+      <label for="uesrname">用户名：</label>
+      <input type="text" class="form-control" id="uesrname" placeholder="请输入用户名">
+      <p class="error"></p>
+    </div>
+    <div class="form-group">
+      <label for="tel">手机号：</label>
+      <input type="tel" class="form-control" id="tel" placeholder="请输入手机号码">
+      <p class="error"></p>
+    </div>
+    <div class="form-group">
+      <label for="psd">密码：</label>
+      <input type="password" class="form-control" id="psd" placeholder="请输入密码">
+      <p class="error"></p>
+    </div>
+      <div class="form-group">
+      <label for="psd1">请确认密码：</label>
+      <input type="password" class="form-control" id="psd1" placeholder="请确认密码">
+      <p class="error"></p>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg btn-block register">注册</button>
+    <a href="/" class="btn btn-danger btn-lg btn-block">取消</a>
+</div>
+
+
+<script type="text/javascript" src="/public/js/mainRegister.js"></script>          
+{% endblock %}

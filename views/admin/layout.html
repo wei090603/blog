@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+      <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/public/css/astyle.css" />
+      <script type="text/javascript" src="/public/js/jquery.min.js"></script>            
+      <script type="text/javascript" src="/public/bootstrap/js/bootstrap.min.js"></script> 
+      <title>首页</title>
+</head>
+<body>
+
+  <h3 class="text-center">后台管理系统</h3>
+  <ul class="nav nav-tabs navBar">
+    <li role="presentation" class="{{indexAction}}"><a href="/admin">首页</a></li>
+    <li role="presentation" class="{{userlistAction}}"><a href="/admin/userlist">用户管理</a></li>
+    <li role="presentation" class="{{bloglistAction}}"><a href="/admin/bloglist">博客管理</a></li>
+    <li role="presentation" class="{{blogaddlistAction}}"><a href="/admin/blog/add">添加博客</a></li>
+    <li role="presentation" class="{{updataistAction}}"><a href="javascript:;">博客修改</a></li>
+  </ul>
+{% block content %}
+
+{% endblock %}
+<div class="modal fade layer" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">错误信息：</h4>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <a href="/login" type="button" class="btn btn-primary" data-dismiss="modal">确认</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

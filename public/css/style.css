@@ -1,0 +1,7 @@
+.form-group {margin-bottom: 0px;}
+.error{height:13px;margin: 5px 0px;text-indent: 1em;font-size: 12px;}
+.blog-item{display:block;border-radius: 5px;background: #fff0c5;padding: 10px;margin-top:10px;text-decoration: none;color: #333;}
+.blog-item .title{display: inline-block;}
+.blog-item .date{float: right;padding-top:10px;}
+#pagelist{text-align: right !important;margin: 0 auto;}
+.blog-detail{}

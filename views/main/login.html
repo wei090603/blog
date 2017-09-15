@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="form-group">
+      <label for="uesrname">用户名：</label>
+      <input type="text" class="form-control" id="uesrname" placeholder="请输入用户名">
+      <p class="error"></p>
+    </div>
+    <div class="form-group">
+      <label for="psd">密码：</label>
+      <input type="password" class="form-control" id="psd" placeholder="请输入密码">
+      <p class="error"></p>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg btn-block login">登陆</button>
+    <a href="/" class="btn btn-danger btn-lg btn-block">取消</a>
+</div>
+
+
+<script type="text/javascript" src="/public/js/mainLogin.js"></script>      
+{% endblock %}

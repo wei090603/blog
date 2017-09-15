@@ -1,0 +1,30 @@
+{% extends 'layout.html'%}
+{% block content %}
+
+<div class="container">
+    {% for blogItem in bloglist %}
+      <a class="blog-item" href="/blogdetail?id={{blogItem._id.toString()}}">
+        <h3 class="title">标题:{{blogItem.title}}</h3><span class="date">{{blogItem.date}}</span>
+        <p class="content">简介：{{blogItem.description}}</p>
+      </a>
+    {% endfor %}
+
+  <nav aria-label="Page navigation" id="pagelist">
+      <ul class="pagination">
+        <li>
+          <a href="/blog?page={{preNum}}&count={{count}}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% for obj in pageArr %}
+        <li class="{{obj.class}}"><a href="/blog?page={{obj.index}}&count={{count}}">{{obj.index}}</a></li>
+        {% endfor %}
+        <li>
+          <a href="/blog?page={{nextNum}}&count={{count}}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+{% endblock %}

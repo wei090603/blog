@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <table class="table blogTable">
+      <tr>
+        <th>标题</th>
+        <th>简介</th>
+        <th>时间</th>
+        <th>操作</th>
+      </tr>
+      {% for blogItem in blogNum %}
+      <tr>
+        <td>{{blogItem.title}}</td>
+        <td>{{blogItem.description}}</td>
+        <td>{{blogItem.date}}</td>
+        <td>
+            <a href="/admin/blog/modify?id={{blogItem._id.toString()}}" type="button" class="btn btn-warning">修改</a>
+            <button type="button" dataId="{{blogItem._id.toString()}}" class="btn btn-danger del">删除</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <nav aria-label="Page navigation" id="pagelist">
+      <ul class="pagination">
+        <li>
+          <a href="/admin/bloglist?page={{preNum}}&count={{count}}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {% for obj in pageArr %}
+        <li class="{{obj.class}}"><a href="/admin/bloglist?page={{obj.index}}&count={{count}}">{{obj.index}}</a></li>
+        {% endfor %}
+        <li>
+          <a href="/admin/bloglist?page={{nextNum}}&count={{count}}" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+<script src="/public/js/adminDel.js"></script>
+{% endblock %}
